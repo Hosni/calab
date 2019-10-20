@@ -1,0 +1,312 @@
+Release 8.2i - xst I.31
+Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.30 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.30 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: newHD.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "newHD.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "newHD"
+Output Format                      : NGC
+Target Device                      : xc3s400-5-tq144
+
+---- Source Options
+Top Module Name                    : newHD
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Write Timing Constraints           : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : newHD.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+safe_implementation                : No
+Optimize Instantiated Primitives   : NO
+use_clock_enable                   : Yes
+use_sync_set                       : Yes
+use_sync_reset                     : Yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "BinTo7Seg.v" in library work
+Compiling verilog file "Adder4bit.v" in library work
+Module <BinTo7Seg> compiled
+Compiling verilog file "newHD.v" in library work
+Module <Adder4bit> compiled
+Module <newHD> compiled
+No errors in compilation
+Analysis of file <"newHD.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <newHD> in library <work>.
+
+Analyzing hierarchy for module <Adder4bit> in library <work>.
+
+Analyzing hierarchy for module <BinTo7Seg> in library <work>.
+
+Building hierarchy successfully finished.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <newHD>.
+Module <newHD> is correct for synthesis.
+ 
+Analyzing module <Adder4bit> in library <work>.
+Module <Adder4bit> is correct for synthesis.
+ 
+Analyzing module <BinTo7Seg> in library <work>.
+Module <BinTo7Seg> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Adder4bit>.
+    Related source file is "Adder4bit.v".
+    Found 4-bit adder for signal <z>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Adder4bit> synthesized.
+
+
+Synthesizing Unit <BinTo7Seg>.
+    Related source file is "BinTo7Seg.v".
+    Found 16x7-bit ROM for signal <j>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <BinTo7Seg> synthesized.
+
+
+Synthesizing Unit <newHD>.
+    Related source file is "newHD.v".
+Unit <newHD> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '3s400.nph' in environment C:\Xilinx.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <newHD> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block newHD, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                          Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : newHD.ngr
+Top Level Output File Name         : newHD
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 15
+
+Cell Usage :
+# BELS                             : 14
+#      LUT2                        : 1
+#      LUT3                        : 1
+#      LUT4                        : 11
+#      MUXF5                       : 1
+# IO Buffers                       : 15
+#      IBUF                        : 8
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400tq144-5 
+
+ Number of Slices:                       7  out of   3584     0%  
+ Number of 4 input LUTs:                13  out of   7168     0%  
+ Number of IOs:                         15
+ Number of bonded IOBs:                 15  out of     97    15%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 11.091ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 189 / 7
+-------------------------------------------------------------------------
+Delay:               11.091ns (Levels of Logic = 6)
+  Source:            x<1> (PAD)
+  Destination:       z<2> (PAD)
+
+  Data Path: x<1> to z<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT4:I0->O            3   0.479   0.794  newHD_02_xo<1>21 (N31)
+     LUT4:I3->O            1   0.479   0.000  newHD_0_xo<1>13 (N16)
+     MUXF5:I0->O           7   0.314   1.201  newHD_0_xo<1>1_f5 (t<3>)
+     LUT4:I0->O            1   0.479   0.681  b/Mrom_j1 (z_0_OBUF)
+     OBUF:I->O                 4.909          z_0_OBUF (z<0>)
+    ----------------------------------------
+    Total                     11.091ns (7.375ns logic, 3.716ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+CPU : 5.30 / 5.63 s | Elapsed : 5.00 / 5.00 s
+ 
+--> 
+
+Total memory usage is 135136 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

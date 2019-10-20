@@ -1,0 +1,3 @@
+verilog work "BinTo7Seg.v"
+verilog work "Adder4bit.v"
+verilog work "newHD.v"

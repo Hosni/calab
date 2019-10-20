@@ -1,0 +1,102 @@
+--------------------------------------------------------------------------------
+Release 8.2i Trace 
+Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\bin\nt\trce.exe -ise D:/AzMemari/Az1/Az1.ise -intstyle ise -e 3 -l 3
+-s 5 -xml newHD newHD.ncd -o newHD.twr newHD.pcf -ucf newHD.ucf
+
+Design file:              newhd.ncd
+Physical constraint file: newhd.pcf
+Device,speed:             xc3s400,-5 (PRODUCTION 1.38 2006-05-03)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+x<0>           |z<0>           |   12.818|
+x<0>           |z<1>           |   12.541|
+x<0>           |z<2>           |   12.492|
+x<0>           |z<3>           |   12.817|
+x<0>           |z<4>           |   12.635|
+x<0>           |z<5>           |   12.312|
+x<0>           |z<6>           |   12.766|
+x<1>           |z<0>           |   12.361|
+x<1>           |z<1>           |   12.084|
+x<1>           |z<2>           |   12.035|
+x<1>           |z<3>           |   12.360|
+x<1>           |z<4>           |   12.178|
+x<1>           |z<5>           |   11.855|
+x<1>           |z<6>           |   12.309|
+x<2>           |z<0>           |   12.076|
+x<2>           |z<1>           |   11.566|
+x<2>           |z<2>           |   11.806|
+x<2>           |z<3>           |   12.012|
+x<2>           |z<4>           |   11.949|
+x<2>           |z<5>           |   11.626|
+x<2>           |z<6>           |   12.080|
+x<3>           |z<0>           |   11.147|
+x<3>           |z<1>           |   10.870|
+x<3>           |z<2>           |   10.708|
+x<3>           |z<3>           |   11.146|
+x<3>           |z<4>           |   10.558|
+x<3>           |z<5>           |   10.167|
+x<3>           |z<6>           |   10.987|
+y<0>           |z<0>           |   13.585|
+y<0>           |z<1>           |   13.308|
+y<0>           |z<2>           |   13.259|
+y<0>           |z<3>           |   13.584|
+y<0>           |z<4>           |   13.402|
+y<0>           |z<5>           |   13.079|
+y<0>           |z<6>           |   13.533|
+y<1>           |z<0>           |   12.284|
+y<1>           |z<1>           |   12.007|
+y<1>           |z<2>           |   11.958|
+y<1>           |z<3>           |   12.283|
+y<1>           |z<4>           |   12.101|
+y<1>           |z<5>           |   11.778|
+y<1>           |z<6>           |   12.232|
+y<2>           |z<0>           |   11.709|
+y<2>           |z<1>           |   11.432|
+y<2>           |z<2>           |   11.319|
+y<2>           |z<3>           |   11.708|
+y<2>           |z<4>           |   11.462|
+y<2>           |z<5>           |   11.139|
+y<2>           |z<6>           |   11.593|
+y<3>           |z<0>           |   11.282|
+y<3>           |z<1>           |   11.005|
+y<3>           |z<2>           |   10.843|
+y<3>           |z<3>           |   11.281|
+y<3>           |z<4>           |   10.693|
+y<3>           |z<5>           |   10.302|
+y<3>           |z<6>           |   11.122|
+---------------+---------------+---------+
+
+
+Analysis completed Sun Oct 06 20:07:42 2019
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 108 MB
+
+
+
