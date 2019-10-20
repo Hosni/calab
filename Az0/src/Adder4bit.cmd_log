@@ -1,0 +1,6 @@
+xst -ise "D:/AzMemari/Az0/Az0.ise" -intstyle ise -ifn Adder4bit.xst -ofn Adder4bit.syr
+ngdbuild -ise "D:/AzMemari/Az0/Az0.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Adder4bit.ucf" -p xc3s400-tq144-5 "Adder4bit.ngc" Adder4bit.ngd
+map -ise "D:/AzMemari/Az0/Az0.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Adder4bit_map.ncd Adder4bit.ngd Adder4bit.pcf
+par -ise "D:/AzMemari/Az0/Az0.ise" -w -intstyle ise -ol std -t 1 Adder4bit_map.ncd Adder4bit.ncd Adder4bit.pcf
+trce -ise "D:/AzMemari/Az0/Az0.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Adder4bit Adder4bit.ncd -o Adder4bit.twr Adder4bit.pcf -ucf Adder4bit.ucf
+bitgen -ise "D:/AzMemari/Az0/Az0.ise" -intstyle ise -f Adder4bit.ut Adder4bit.ncd

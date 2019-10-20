@@ -1,0 +1,5 @@
+# begin LFP file D:\AzMemari\Az0\Adder4bit.lfp
+designfile Adder4bit.v
+parttype xc3s400-5-tq144
+bus_delimiter 1;
+set_busdelim_onsave 1;
