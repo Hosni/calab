@@ -1,0 +1,70 @@
+--------------------------------------------------------------------------------
+Release 8.2i Trace 
+Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\bin\nt\trce.exe -ise D:/AzMemari/Az2/Main/Main.ise -intstyle ise -e 3
+-l 3 -s 5 -xml Main Main.ncd -o Main.twr Main.pcf -ucf Main.ucf
+
+Design file:              main.ncd
+Physical constraint file: main.pcf
+Device,speed:             xc3s400,-5 (PRODUCTION 1.38 2006-05-03)
+Report level:             error report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock c
+------------+------------+------------+------------------+--------+
+            |  Setup to  |  Hold to   |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+f<0>        |    0.944(R)|    1.957(R)|c_BUFGP           |   0.000|
+f<1>        |    1.629(R)|    1.661(R)|c_BUFGP           |   0.000|
+f<2>        |    0.581(R)|    1.716(R)|c_BUFGP           |   0.000|
+f<3>        |    1.107(R)|    0.981(R)|c_BUFGP           |   0.000|
+g<0>        |    1.509(R)|    1.744(R)|c_BUFGP           |   0.000|
+g<1>        |    1.144(R)|    1.747(R)|c_BUFGP           |   0.000|
+g<2>        |    0.436(R)|    1.822(R)|c_BUFGP           |   0.000|
+g<3>        |    0.075(R)|    1.811(R)|c_BUFGP           |   0.000|
+l           |    1.804(R)|    0.465(R)|c_BUFGP           |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock c to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+q<0>        |   13.356(R)|c_BUFGP           |   0.000|
+q<1>        |   13.723(R)|c_BUFGP           |   0.000|
+q<2>        |   13.483(R)|c_BUFGP           |   0.000|
+q<3>        |   13.746(R)|c_BUFGP           |   0.000|
+q<4>        |   13.733(R)|c_BUFGP           |   0.000|
+q<5>        |   13.486(R)|c_BUFGP           |   0.000|
+q<6>        |   13.466(R)|c_BUFGP           |   0.000|
+------------+------------+------------------+--------+
+
+
+Analysis completed Sun Oct 13 19:59:30 2019
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 108 MB
+
+
+
