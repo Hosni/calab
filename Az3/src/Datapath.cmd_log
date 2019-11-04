@@ -1,0 +1,9 @@
+xst -ise "D:/AzMemari/AZ3/Az3.ise" -intstyle ise -ifn Datapath.xst -ofn Datapath.syr
+xst -ise "D:/AzMemari/AZ3/Az3.ise" -intstyle ise -ifn Datapath.xst -ofn Datapath.syr
+xst -ise "D:/AzMemari/AZ3/Az3.ise" -intstyle ise -ifn Datapath.xst -ofn Datapath.syr
+xst -ise "D:/AzMemari/AZ3/Az3.ise" -intstyle ise -ifn Datapath.xst -ofn Datapath.syr
+ngdbuild -ise "D:/AzMemari/AZ3/Az3.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Datapath.ucf" -p xc3s400-tq144-5 "Datapath.ngc" Datapath.ngd
+map -ise "D:/AzMemari/AZ3/Az3.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Datapath_map.ncd Datapath.ngd Datapath.pcf
+par -ise "D:/AzMemari/AZ3/Az3.ise" -w -intstyle ise -ol std -t 1 Datapath_map.ncd Datapath.ncd Datapath.pcf
+trce -ise "D:/AzMemari/AZ3/Az3.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Datapath Datapath.ncd -o Datapath.twr Datapath.pcf -ucf Datapath.ucf
+bitgen -ise "D:/AzMemari/AZ3/Az3.ise" -intstyle ise -f Datapath.ut Datapath.ncd
