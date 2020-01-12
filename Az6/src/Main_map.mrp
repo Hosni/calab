@@ -1,0 +1,260 @@
+Release 8.2i Map I.31
+Xilinx Mapping Report File for Design 'Main'
+
+Design Information
+------------------
+Command Line   : C:\Xilinx\bin\nt\map.exe -ise D:/AzMemari/Az6/Az6.ise -intstyle
+ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Main_map.ncd Main.ngd
+Main.pcf 
+Target Device  : xc3s400
+Target Package : tq144
+Target Speed   : -5
+Mapper Version : spartan3 -- $Revision: 1.34.32.1 $
+Mapped Date    : Sun Nov 24 19:53:02 2019
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   19
+Logic Utilization:
+  Total Number Slice Registers:        85 out of   7,168    1%
+    Number used as Flip Flops:                    21
+    Number used as Latches:                       64
+  Number of 4 input LUTs:             143 out of   7,168    1%
+Logic Distribution:
+  Number of occupied Slices:                          115 out of   3,584    3%
+    Number of Slices containing only related logic:     115 out of     115  100%
+    Number of Slices containing unrelated logic:          0 out of     115    0%
+      *See NOTES below for an explanation of the effects of unrelated logic
+Total Number 4 input LUTs:            144 out of   7,168    2%
+  Number used as logic:                143
+  Number used as a route-thru:           1
+  Number of bonded IOBs:               46 out of      97   47%
+  Number of GCLKs:                     1 out of       8   12%
+
+Total equivalent gate count for design:  1,463
+Additional JTAG gate count for IOBs:  2,208
+Peak Memory Usage:  141 MB
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Modular Design Summary
+Section 11 - Timing Report
+Section 12 - Configuration String Information
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:LIT:243 - Logical network N143 has no load.
+WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 1
+   more times for the following (max. 5 shown):
+   N144
+   To see the details of these warning messages, please use the -detail switch.
+WARNING:Pack:266 - The function generator s2<0>_SW0_G failed to merge with F5
+   multiplexer s2<0>_SW0.  There is a conflict for the FXMUX.  The design will
+   exhibit suboptimal timing.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0003 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0006 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0014 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0013 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0007 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0005 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0008 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0004 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0012 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0009 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0010 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0011 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0002 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0001 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_cmp_eq0000 is sourced by
+   a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M/_not0001 is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+
+Section 3 - Informational
+-------------------------
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:535 - The following Virtex BUFG(s) is/are being retargetted to
+   Virtex2 BUFGMUX(s) with input tied to I0 and Select pin tied to constant 0:
+   BUFGP symbol "clk_BUFGP" (output signal=clk_BUFGP)
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs in the
+   schematic.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   2 block(s) removed
+   2 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "N143" is loadless and has been removed.
+ Loadless block "XST_VCC" (ONE) removed.
+The signal "N144" is loadless and has been removed.
+ Loadless block "XST_GND" (ZERO) removed.
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type    | Direction | IO Standard | Drive    | Slew | Reg (s)  | Resistor | IOB   |
+|                                    |         |           |             | Strength | Rate |          |          | Delay |
++------------------------------------------------------------------------------------------------------------------------+
+| clk                                | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| f                                  | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| l1                                 | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| l2                                 | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| l3                                 | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| l4                                 | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| r                                  | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| s1<0>                              | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| s1<1>                              | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| s1<2>                              | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| s2<0>                              | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| s2<1>                              | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| s2<2>                              | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| w                                  | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| x<0>                               | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| x<1>                               | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| x<2>                               | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| x<3>                               | IOB     | INPUT     | LVCMOS25    |          |      |          |          |       |
+| z1<0>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z1<1>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z1<2>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z1<3>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z1<4>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z1<5>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z1<6>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z2<0>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z2<1>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z2<2>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z2<3>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z2<4>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z2<5>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z2<6>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z3<0>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z3<1>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z3<2>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z3<3>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z3<4>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z3<5>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z3<6>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z4<0>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z4<1>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z4<2>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z4<3>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z4<4>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z4<5>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
+| z4<6>                              | IOB     | OUTPUT    | LVCMOS25    | 12       | SLOW |          |          |       |
++------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Modular Design Summary
+-----------------------------------
+Modular Design not used for this design.
+
+Section 11 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 12 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
