@@ -1,0 +1,6 @@
+verilog work "memory16.v"
+verilog work "Reg4bit.v"
+verilog work "MUX4x1.v"
+verilog work "BinTo7Seg.v"
+verilog work "Adder4bit.v"
+verilog work "Main.v"
