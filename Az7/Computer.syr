@@ -1,0 +1,1427 @@
+Release 8.2i - xst I.31
+Copyright (c) 1995-2006 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.30 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.30 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: Computer.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Computer.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Computer"
+Output Format                      : NGC
+Target Device                      : xc3s400-5-tq144
+
+---- Source Options
+Top Module Name                    : Computer
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Write Timing Constraints           : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : Computer.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+safe_implementation                : No
+Optimize Instantiated Primitives   : NO
+use_clock_enable                   : Yes
+use_sync_set                       : Yes
+use_sync_reset                     : Yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "memory16.v" in library work
+Compiling verilog file "Reg4bit.v" in library work
+Module <memory16> compiled
+Compiling verilog file "MUX8x1.v" in library work
+Module <Reg4bit> compiled
+Compiling verilog file "BinTo7Seg.v" in library work
+Module <MUX8x1> compiled
+Compiling verilog file "Adder4bit.v" in library work
+Module <BinTo7Seg> compiled
+Compiling verilog file "clkctrl.v" in library work
+Module <Adder4bit> compiled
+Compiling verilog file "Main.v" in library work
+Module <clkctrl> compiled
+Compiling verilog file "Controller.v" in library work
+Module <Main> compiled
+Compiling verilog file "Computer.v" in library work
+Module <Controller> compiled
+Module <Computer> compiled
+No errors in compilation
+Analysis of file <"Computer.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Computer> in library <work>.
+
+Analyzing hierarchy for module <Controller> in library <work>.
+
+Analyzing hierarchy for module <Main> in library <work>.
+
+Analyzing hierarchy for module <clkctrl> in library <work>.
+
+Analyzing hierarchy for module <Reg4bit> in library <work>.
+
+Analyzing hierarchy for module <memory16> in library <work>.
+
+Analyzing hierarchy for module <MUX8x1> in library <work>.
+
+Analyzing hierarchy for module <BinTo7Seg> in library <work>.
+
+Analyzing hierarchy for module <Adder4bit> in library <work>.
+
+Building hierarchy successfully finished.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Computer>.
+Module <Computer> is correct for synthesis.
+ 
+Analyzing module <Controller> in library <work>.
+Module <Controller> is correct for synthesis.
+ 
+Analyzing module <Main> in library <work>.
+Module <Main> is correct for synthesis.
+ 
+Analyzing module <Reg4bit> in library <work>.
+Module <Reg4bit> is correct for synthesis.
+ 
+Analyzing module <memory16> in library <work>.
+WARNING:Xst:905 - "memory16.v" line 29: The signals <w, ad, x> are missing in the sensitivity list of always block.
+Module <memory16> is correct for synthesis.
+ 
+Analyzing module <MUX8x1> in library <work>.
+Module <MUX8x1> is correct for synthesis.
+ 
+Analyzing module <BinTo7Seg> in library <work>.
+Module <BinTo7Seg> is correct for synthesis.
+ 
+Analyzing module <Adder4bit> in library <work>.
+Module <Adder4bit> is correct for synthesis.
+ 
+Analyzing module <clkctrl> in library <work>.
+Module <clkctrl> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Controller>.
+    Related source file is "Controller.v".
+    Register <l2> equivalent to <r> has been removed
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (falling_edge)                             |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <l1>.
+    Found 1-bit register for signal <l3>.
+    Found 1-bit register for signal <l4>.
+    Found 1-bit register for signal <f>.
+    Found 3-bit register for signal <s1>.
+    Found 3-bit register for signal <s2>.
+    Found 1-bit register for signal <r>.
+    Found 1-bit register for signal <w>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  12 D-type flip-flop(s).
+Unit <Controller> synthesized.
+
+
+Synthesizing Unit <clkctrl>.
+    Related source file is "clkctrl.v".
+    Found 1-bit register for signal <clk>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clkctrl> synthesized.
+
+
+Synthesizing Unit <Reg4bit>.
+    Related source file is "Reg4bit.v".
+    Found 4-bit register for signal <q>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <Reg4bit> synthesized.
+
+
+Synthesizing Unit <memory16>.
+    Related source file is "memory16.v".
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_0>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_1>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_2>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_3>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_4>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_5>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_6>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_7>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_8>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_9>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_10>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_11>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_12>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_13>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_14>.
+WARNING:Xst:737 - Found 4-bit latch for signal <mem_15>.
+    Found 4-bit tristate buffer for signal <y>.
+    Found 4-bit 16-to-1 multiplexer for signal <$varindex0000> created at line 33.
+    Summary:
+	inferred   4 Multiplexer(s).
+	inferred   4 Tristate(s).
+Unit <memory16> synthesized.
+
+
+Synthesizing Unit <MUX8x1>.
+    Related source file is "MUX8x1.v".
+    Found 4-bit 8-to-1 multiplexer for signal <y>.
+    Summary:
+	inferred   4 Multiplexer(s).
+Unit <MUX8x1> synthesized.
+
+
+Synthesizing Unit <BinTo7Seg>.
+    Related source file is "BinTo7Seg.v".
+    Found 16x7-bit ROM for signal <j>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <BinTo7Seg> synthesized.
+
+
+Synthesizing Unit <Adder4bit>.
+    Related source file is "Adder4bit.v".
+    Found 4-bit adder for signal <$addsub0000> created at line 26.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <Adder4bit> synthesized.
+
+
+Synthesizing Unit <Main>.
+    Related source file is "Main.v".
+WARNING:Xst:653 - Signal <nullWire> is used but never assigned. Tied to value 0000.
+Unit <Main> synthesized.
+
+
+Synthesizing Unit <Computer>.
+    Related source file is "Computer.v".
+Unit <Computer> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 4
+ 16x7-bit ROM                                          : 4
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 13
+ 1-bit register                                        : 7
+ 3-bit register                                        : 2
+ 4-bit register                                        : 4
+# Latches                                              : 16
+ 4-bit latch                                           : 16
+# Multiplexers                                         : 3
+ 4-bit 16-to-1 multiplexer                             : 1
+ 4-bit 8-to-1 multiplexer                              : 2
+# Tristates                                            : 1
+ 4-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <cu/state> on signal <state[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 010
+ 100   | 110
+-------------------
+Loading device for application Rf_Device from file '3s400.nph' in environment C:\Xilinx.
+WARNING:Xst:1426 - The value init of the FF/Latch l3 hinder the constant cleaning in the block Controller.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1293 - FF/Latch  <s1_2> has a constant value of 0 in block <Controller>.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch  <s2_2> has a constant value of 0 in block <Controller>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 4
+ 16x7-bit ROM                                          : 4
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 18
+ Flip-Flops                                            : 18
+# Latches                                              : 16
+ 4-bit latch                                           : 16
+# Multiplexers                                         : 3
+ 4-bit 16-to-1 multiplexer                             : 1
+ 4-bit 8-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2042 - Unit memory16: 4 internal tristates are replaced by logic (pull-up yes): y<0>, y<1>, y<2>, y<3>.
+
+Optimizing unit <Computer> ...
+
+Optimizing unit <Controller> ...
+
+Optimizing unit <memory16> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Computer, actual ratio is 2.
+FlipFlop dp/AR/q_0 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 31
+ Flip-Flops                                            : 31
+
+=========================================================================
+
+=========================================================================
+*                          Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Computer.ngr
+Top Level Output File Name         : Computer
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 34
+
+Cell Usage :
+# BELS                             : 147
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 2
+#      LUT3                        : 44
+#      LUT4                        : 59
+#      LUT4_D                      : 2
+#      LUT4_L                      : 1
+#      MUXF5                       : 24
+#      MUXF6                       : 8
+#      MUXF7                       : 4
+#      VCC                         : 1
+# FlipFlops/Latches                : 95
+#      FD_1                        : 3
+#      FDE                         : 17
+#      FDE_1                       : 2
+#      FDR_1                       : 2
+#      FDRS_1                      : 4
+#      FDS_1                       : 2
+#      FDSE_1                      : 1
+#      LDE                         : 60
+#      LDE_1                       : 4
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 33
+#      IBUF                        : 5
+#      OBUF                        : 28
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s400tq144-5 
+
+ Number of Slices:                      80  out of   3584     2%  
+ Number of Slice Flip Flops:            94  out of   7168     1%  
+ Number of 4 input LUTs:               109  out of   7168     1%  
+ Number of IOs:                         34
+ Number of bonded IOBs:                 34  out of     97    35%  
+    IOB Flip Flops:                      1
+ Number of GCLKs:                        2  out of      8    25%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------+------------------------+-------+
+Clock Signal                         | Clock buffer(FF name)  | Load  |
+-------------------------------------+------------------------+-------+
+c2                                   | BUFGP                  | 1     |
+ccc/clk1                             | BUFG                   | 30    |
+dp/M/_cmp_eq0014(dp/M/_cmp_eq00141:O)| NONE(*)(dp/M/mem_15_0) | 4     |
+dp/M/_cmp_eq0013(dp/M/_cmp_eq00131:O)| NONE(*)(dp/M/mem_14_0) | 4     |
+dp/M/_cmp_eq0012(dp/M/_cmp_eq00121:O)| NONE(*)(dp/M/mem_13_3) | 4     |
+dp/M/_cmp_eq0011(dp/M/_cmp_eq00111:O)| NONE(*)(dp/M/mem_12_3) | 4     |
+dp/M/_cmp_eq0010(dp/M/_cmp_eq00101:O)| NONE(*)(dp/M/mem_11_2) | 4     |
+dp/M/_cmp_eq0009(dp/M/_cmp_eq00091:O)| NONE(*)(dp/M/mem_10_0) | 4     |
+dp/M/_cmp_eq0008(dp/M/_cmp_eq00081:O)| NONE(*)(dp/M/mem_9_0)  | 4     |
+dp/M/_cmp_eq0007(dp/M/_cmp_eq00071:O)| NONE(*)(dp/M/mem_8_1)  | 4     |
+dp/M/_cmp_eq0006(dp/M/_cmp_eq00061:O)| NONE(*)(dp/M/mem_7_2)  | 4     |
+dp/M/_cmp_eq0005(dp/M/_cmp_eq00051:O)| NONE(*)(dp/M/mem_6_3)  | 4     |
+dp/M/_cmp_eq0004(dp/M/_cmp_eq00041:O)| NONE(*)(dp/M/mem_5_0)  | 4     |
+dp/M/_cmp_eq0003(dp/M/_cmp_eq00031:O)| NONE(*)(dp/M/mem_4_1)  | 4     |
+dp/M/_cmp_eq0002(dp/M/_cmp_eq00021:O)| NONE(*)(dp/M/mem_3_1)  | 4     |
+dp/M/_cmp_eq0001(dp/M/_cmp_eq00011:O)| NONE(*)(dp/M/mem_2_3)  | 4     |
+dp/M/_cmp_eq0000(dp/M/_cmp_eq00001:O)| NONE(*)(dp/M/mem_1_0)  | 4     |
+dp/M/_not0001(dp/M/_not00011:O)      | NONE(*)(dp/M/mem_0_0)  | 4     |
+-------------------------------------+------------------------+-------+
+(*) These 16 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 10.810ns (Maximum Frequency: 92.509MHz)
+   Minimum input arrival time before clock: 5.664ns
+   Maximum output required time after clock: 8.599ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ccc/clk1'
+  Clock period: 10.810ns (frequency: 92.509MHz)
+  Total number of paths / destination ports: 2052 / 60
+-------------------------------------------------------------------------
+Delay:               5.405ns (Levels of Logic = 4)
+  Source:            cu/r (FF)
+  Destination:       dp/AR/q_2 (FF)
+  Source Clock:      ccc/clk1 falling
+  Destination Clock: ccc/clk1 rising
+
+  Data Path: cu/r to dp/AR/q_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS_1:C->Q          13   0.626   1.017  cu/r (cu/r)
+     LUT4:I3->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.794  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I3->O            4   0.479   0.000  dp/ALU/z<2>1_1 (dp/ALU/z<2>1)
+     FDE:D                     0.176          dp/R1/q_2
+    ----------------------------------------
+    Total                      5.405ns (2.553ns logic, 2.852ns route)
+                                       (47.2% logic, 52.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0014'
+  Clock period: 7.740ns (frequency: 129.204MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.740ns (Levels of Logic = 8)
+  Source:            dp/M/mem_15_1 (LATCH)
+  Destination:       dp/M/mem_15_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0014 falling
+  Destination Clock: dp/M/_cmp_eq0014 falling
+
+  Data Path: dp/M/mem_15_1 to dp/M/mem_15_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.976  dp/M/mem_15_1 (dp/M/mem_15_1)
+     LUT3:I0->O            1   0.479   0.000  dp/M/ad<0>8 (dp/M/N10)
+     MUXF5:I1->O           1   0.314   0.000  dp/M/ad<1>_f5_3 (dp/M/ad<1>_f54)
+     MUXF6:I1->O           1   0.298   0.000  dp/M/ad<2>_f6_1 (dp/M/ad<2>_f62)
+     MUXF7:I1->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_15_3
+    ----------------------------------------
+    Total                      7.740ns (3.867ns logic, 3.873ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0013'
+  Clock period: 7.615ns (frequency: 131.325MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.615ns (Levels of Logic = 8)
+  Source:            dp/M/mem_14_1 (LATCH)
+  Destination:       dp/M/mem_14_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0013 falling
+  Destination Clock: dp/M/_cmp_eq0013 falling
+
+  Data Path: dp/M/mem_14_1 to dp/M/mem_14_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.851  dp/M/mem_14_1 (dp/M/mem_14_1)
+     LUT3:I1->O            1   0.479   0.000  dp/M/ad<0>8 (dp/M/N10)
+     MUXF5:I1->O           1   0.314   0.000  dp/M/ad<1>_f5_3 (dp/M/ad<1>_f54)
+     MUXF6:I1->O           1   0.298   0.000  dp/M/ad<2>_f6_1 (dp/M/ad<2>_f62)
+     MUXF7:I1->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_14_3
+    ----------------------------------------
+    Total                      7.615ns (3.867ns logic, 3.748ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0012'
+  Clock period: 7.740ns (frequency: 129.204MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.740ns (Levels of Logic = 8)
+  Source:            dp/M/mem_13_1 (LATCH)
+  Destination:       dp/M/mem_13_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0012 falling
+  Destination Clock: dp/M/_cmp_eq0012 falling
+
+  Data Path: dp/M/mem_13_1 to dp/M/mem_13_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.976  dp/M/mem_13_1 (dp/M/mem_13_1)
+     LUT3:I0->O            1   0.479   0.000  dp/M/ad<0>9 (dp/M/N11)
+     MUXF5:I0->O           1   0.314   0.000  dp/M/ad<1>_f5_3 (dp/M/ad<1>_f54)
+     MUXF6:I1->O           1   0.298   0.000  dp/M/ad<2>_f6_1 (dp/M/ad<2>_f62)
+     MUXF7:I1->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_13_3
+    ----------------------------------------
+    Total                      7.740ns (3.867ns logic, 3.873ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0011'
+  Clock period: 7.615ns (frequency: 131.325MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.615ns (Levels of Logic = 8)
+  Source:            dp/M/mem_12_1 (LATCH)
+  Destination:       dp/M/mem_12_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0011 falling
+  Destination Clock: dp/M/_cmp_eq0011 falling
+
+  Data Path: dp/M/mem_12_1 to dp/M/mem_12_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.851  dp/M/mem_12_1 (dp/M/mem_12_1)
+     LUT3:I1->O            1   0.479   0.000  dp/M/ad<0>9 (dp/M/N11)
+     MUXF5:I0->O           1   0.314   0.000  dp/M/ad<1>_f5_3 (dp/M/ad<1>_f54)
+     MUXF6:I1->O           1   0.298   0.000  dp/M/ad<2>_f6_1 (dp/M/ad<2>_f62)
+     MUXF7:I1->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_12_3
+    ----------------------------------------
+    Total                      7.615ns (3.867ns logic, 3.748ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0010'
+  Clock period: 7.740ns (frequency: 129.204MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.740ns (Levels of Logic = 8)
+  Source:            dp/M/mem_11_1 (LATCH)
+  Destination:       dp/M/mem_11_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0010 falling
+  Destination Clock: dp/M/_cmp_eq0010 falling
+
+  Data Path: dp/M/mem_11_1 to dp/M/mem_11_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.976  dp/M/mem_11_1 (dp/M/mem_11_1)
+     LUT3:I0->O            1   0.479   0.000  dp/M/ad<0>10 (dp/M/N12)
+     MUXF5:I1->O           1   0.314   0.000  dp/M/ad<1>_f5_4 (dp/M/ad<1>_f55)
+     MUXF6:I0->O           1   0.298   0.000  dp/M/ad<2>_f6_1 (dp/M/ad<2>_f62)
+     MUXF7:I1->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_11_3
+    ----------------------------------------
+    Total                      7.740ns (3.867ns logic, 3.873ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0009'
+  Clock period: 7.615ns (frequency: 131.325MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.615ns (Levels of Logic = 8)
+  Source:            dp/M/mem_10_1 (LATCH)
+  Destination:       dp/M/mem_10_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0009 falling
+  Destination Clock: dp/M/_cmp_eq0009 falling
+
+  Data Path: dp/M/mem_10_1 to dp/M/mem_10_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.851  dp/M/mem_10_1 (dp/M/mem_10_1)
+     LUT3:I1->O            1   0.479   0.000  dp/M/ad<0>10 (dp/M/N12)
+     MUXF5:I1->O           1   0.314   0.000  dp/M/ad<1>_f5_4 (dp/M/ad<1>_f55)
+     MUXF6:I0->O           1   0.298   0.000  dp/M/ad<2>_f6_1 (dp/M/ad<2>_f62)
+     MUXF7:I1->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_10_3
+    ----------------------------------------
+    Total                      7.615ns (3.867ns logic, 3.748ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0008'
+  Clock period: 7.740ns (frequency: 129.204MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.740ns (Levels of Logic = 8)
+  Source:            dp/M/mem_9_1 (LATCH)
+  Destination:       dp/M/mem_9_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0008 falling
+  Destination Clock: dp/M/_cmp_eq0008 falling
+
+  Data Path: dp/M/mem_9_1 to dp/M/mem_9_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.976  dp/M/mem_9_1 (dp/M/mem_9_1)
+     LUT3:I0->O            1   0.479   0.000  dp/M/ad<0>11 (dp/M/N13)
+     MUXF5:I0->O           1   0.314   0.000  dp/M/ad<1>_f5_4 (dp/M/ad<1>_f55)
+     MUXF6:I0->O           1   0.298   0.000  dp/M/ad<2>_f6_1 (dp/M/ad<2>_f62)
+     MUXF7:I1->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_9_3
+    ----------------------------------------
+    Total                      7.740ns (3.867ns logic, 3.873ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0007'
+  Clock period: 7.615ns (frequency: 131.325MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.615ns (Levels of Logic = 8)
+  Source:            dp/M/mem_8_1 (LATCH)
+  Destination:       dp/M/mem_8_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0007 falling
+  Destination Clock: dp/M/_cmp_eq0007 falling
+
+  Data Path: dp/M/mem_8_1 to dp/M/mem_8_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.851  dp/M/mem_8_1 (dp/M/mem_8_1)
+     LUT3:I1->O            1   0.479   0.000  dp/M/ad<0>11 (dp/M/N13)
+     MUXF5:I0->O           1   0.314   0.000  dp/M/ad<1>_f5_4 (dp/M/ad<1>_f55)
+     MUXF6:I0->O           1   0.298   0.000  dp/M/ad<2>_f6_1 (dp/M/ad<2>_f62)
+     MUXF7:I1->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_8_3
+    ----------------------------------------
+    Total                      7.615ns (3.867ns logic, 3.748ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0006'
+  Clock period: 7.740ns (frequency: 129.204MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.740ns (Levels of Logic = 8)
+  Source:            dp/M/mem_7_1 (LATCH)
+  Destination:       dp/M/mem_7_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0006 falling
+  Destination Clock: dp/M/_cmp_eq0006 falling
+
+  Data Path: dp/M/mem_7_1 to dp/M/mem_7_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.976  dp/M/mem_7_1 (dp/M/mem_7_1)
+     LUT3:I0->O            1   0.479   0.000  dp/M/ad<0>12 (dp/M/N14)
+     MUXF5:I1->O           1   0.314   0.000  dp/M/ad<1>_f5_5 (dp/M/ad<1>_f56)
+     MUXF6:I1->O           1   0.298   0.000  dp/M/ad<2>_f6_2 (dp/M/ad<2>_f63)
+     MUXF7:I0->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_7_3
+    ----------------------------------------
+    Total                      7.740ns (3.867ns logic, 3.873ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0005'
+  Clock period: 7.615ns (frequency: 131.325MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.615ns (Levels of Logic = 8)
+  Source:            dp/M/mem_6_1 (LATCH)
+  Destination:       dp/M/mem_6_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0005 falling
+  Destination Clock: dp/M/_cmp_eq0005 falling
+
+  Data Path: dp/M/mem_6_1 to dp/M/mem_6_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.851  dp/M/mem_6_1 (dp/M/mem_6_1)
+     LUT3:I1->O            1   0.479   0.000  dp/M/ad<0>12 (dp/M/N14)
+     MUXF5:I1->O           1   0.314   0.000  dp/M/ad<1>_f5_5 (dp/M/ad<1>_f56)
+     MUXF6:I1->O           1   0.298   0.000  dp/M/ad<2>_f6_2 (dp/M/ad<2>_f63)
+     MUXF7:I0->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_6_3
+    ----------------------------------------
+    Total                      7.615ns (3.867ns logic, 3.748ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0004'
+  Clock period: 7.740ns (frequency: 129.204MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.740ns (Levels of Logic = 8)
+  Source:            dp/M/mem_5_1 (LATCH)
+  Destination:       dp/M/mem_5_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0004 falling
+  Destination Clock: dp/M/_cmp_eq0004 falling
+
+  Data Path: dp/M/mem_5_1 to dp/M/mem_5_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.976  dp/M/mem_5_1 (dp/M/mem_5_1)
+     LUT3:I0->O            1   0.479   0.000  dp/M/ad<0>13 (dp/M/N15)
+     MUXF5:I0->O           1   0.314   0.000  dp/M/ad<1>_f5_5 (dp/M/ad<1>_f56)
+     MUXF6:I1->O           1   0.298   0.000  dp/M/ad<2>_f6_2 (dp/M/ad<2>_f63)
+     MUXF7:I0->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_5_3
+    ----------------------------------------
+    Total                      7.740ns (3.867ns logic, 3.873ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0003'
+  Clock period: 7.615ns (frequency: 131.325MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.615ns (Levels of Logic = 8)
+  Source:            dp/M/mem_4_1 (LATCH)
+  Destination:       dp/M/mem_4_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0003 falling
+  Destination Clock: dp/M/_cmp_eq0003 falling
+
+  Data Path: dp/M/mem_4_1 to dp/M/mem_4_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.851  dp/M/mem_4_1 (dp/M/mem_4_1)
+     LUT3:I1->O            1   0.479   0.000  dp/M/ad<0>13 (dp/M/N15)
+     MUXF5:I0->O           1   0.314   0.000  dp/M/ad<1>_f5_5 (dp/M/ad<1>_f56)
+     MUXF6:I1->O           1   0.298   0.000  dp/M/ad<2>_f6_2 (dp/M/ad<2>_f63)
+     MUXF7:I0->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_4_3
+    ----------------------------------------
+    Total                      7.615ns (3.867ns logic, 3.748ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0002'
+  Clock period: 7.740ns (frequency: 129.204MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.740ns (Levels of Logic = 8)
+  Source:            dp/M/mem_3_1 (LATCH)
+  Destination:       dp/M/mem_3_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0002 falling
+  Destination Clock: dp/M/_cmp_eq0002 falling
+
+  Data Path: dp/M/mem_3_1 to dp/M/mem_3_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.976  dp/M/mem_3_1 (dp/M/mem_3_1)
+     LUT3:I0->O            1   0.479   0.000  dp/M/ad<0>14 (dp/M/N16)
+     MUXF5:I1->O           1   0.314   0.000  dp/M/ad<1>_f5_6 (dp/M/ad<1>_f57)
+     MUXF6:I0->O           1   0.298   0.000  dp/M/ad<2>_f6_2 (dp/M/ad<2>_f63)
+     MUXF7:I0->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_3_3
+    ----------------------------------------
+    Total                      7.740ns (3.867ns logic, 3.873ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0001'
+  Clock period: 7.615ns (frequency: 131.325MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.615ns (Levels of Logic = 8)
+  Source:            dp/M/mem_2_1 (LATCH)
+  Destination:       dp/M/mem_2_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0001 falling
+  Destination Clock: dp/M/_cmp_eq0001 falling
+
+  Data Path: dp/M/mem_2_1 to dp/M/mem_2_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.851  dp/M/mem_2_1 (dp/M/mem_2_1)
+     LUT3:I1->O            1   0.479   0.000  dp/M/ad<0>14 (dp/M/N16)
+     MUXF5:I1->O           1   0.314   0.000  dp/M/ad<1>_f5_6 (dp/M/ad<1>_f57)
+     MUXF6:I0->O           1   0.298   0.000  dp/M/ad<2>_f6_2 (dp/M/ad<2>_f63)
+     MUXF7:I0->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_2_3
+    ----------------------------------------
+    Total                      7.615ns (3.867ns logic, 3.748ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_cmp_eq0000'
+  Clock period: 7.740ns (frequency: 129.204MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.740ns (Levels of Logic = 8)
+  Source:            dp/M/mem_1_1 (LATCH)
+  Destination:       dp/M/mem_1_3 (LATCH)
+  Source Clock:      dp/M/_cmp_eq0000 falling
+  Destination Clock: dp/M/_cmp_eq0000 falling
+
+  Data Path: dp/M/mem_1_1 to dp/M/mem_1_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.551   0.976  dp/M/mem_1_1 (dp/M/mem_1_1)
+     LUT3:I0->O            1   0.479   0.000  dp/M/ad<0>15 (dp/M/N17)
+     MUXF5:I0->O           1   0.314   0.000  dp/M/ad<1>_f5_6 (dp/M/ad<1>_f57)
+     MUXF6:I0->O           1   0.298   0.000  dp/M/ad<2>_f6_2 (dp/M/ad<2>_f63)
+     MUXF7:I0->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_1_3
+    ----------------------------------------
+    Total                      7.740ns (3.867ns logic, 3.873ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dp/M/_not0001'
+  Clock period: 7.615ns (frequency: 131.325MHz)
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Delay:               7.615ns (Levels of Logic = 8)
+  Source:            dp/M/mem_0_1 (LATCH)
+  Destination:       dp/M/mem_0_3 (LATCH)
+  Source Clock:      dp/M/_not0001 rising
+  Destination Clock: dp/M/_not0001 rising
+
+  Data Path: dp/M/mem_0_1 to dp/M/mem_0_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE_1:G->Q            1   0.551   0.851  dp/M/mem_0_1 (dp/M/mem_0_1)
+     LUT3:I1->O            1   0.479   0.000  dp/M/ad<0>15 (dp/M/N17)
+     MUXF5:I0->O           1   0.314   0.000  dp/M/ad<1>_f5_6 (dp/M/ad<1>_f57)
+     MUXF6:I0->O           1   0.298   0.000  dp/M/ad<2>_f6_2 (dp/M/ad<2>_f63)
+     MUXF7:I0->O           2   0.298   0.915  dp/M/Mmux__varindex0000_f7_0 (dp/M/_varindex0000<1>)
+     LUT4:I1->O            1   0.479   0.000  s1<0>2 (N3123)
+     MUXF5:I1->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE_1:D                   0.176          dp/M/mem_0_3
+    ----------------------------------------
+    Total                      7.615ns (3.867ns logic, 3.748ns route)
+                                       (50.8% logic, 49.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'c2'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.572ns (Levels of Logic = 1)
+  Source:            c1 (PAD)
+  Destination:       ccc/clk (FF)
+  Destination Clock: c2 falling
+
+  Data Path: c1 to ccc/clk
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.715   0.681  c1_IBUF (c1_IBUF)
+     FD_1:D                    0.176          ccc/clk
+    ----------------------------------------
+    Total                      1.572ns (0.891ns logic, 0.681ns route)
+                                       (56.7% logic, 43.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ccc/clk1'
+  Total number of paths / destination ports: 94 / 17
+-------------------------------------------------------------------------
+Offset:              5.517ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/AR/q_2 (FF)
+  Destination Clock: ccc/clk1 rising
+
+  Data Path: x<1> to dp/AR/q_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.794  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I3->O            4   0.479   0.000  dp/ALU/z<2>1_1 (dp/ALU/z<2>1)
+     FDE:D                     0.176          dp/R1/q_2
+    ----------------------------------------
+    Total                      5.517ns (2.642ns logic, 2.875ns route)
+                                       (47.9% logic, 52.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0014'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_15_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0014 falling
+
+  Data Path: x<1> to dp/M/mem_15_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_15_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0013'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_14_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0013 falling
+
+  Data Path: x<1> to dp/M/mem_14_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_14_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0012'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_13_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0012 falling
+
+  Data Path: x<1> to dp/M/mem_13_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_13_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0011'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_12_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0011 falling
+
+  Data Path: x<1> to dp/M/mem_12_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_12_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0010'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_11_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0010 falling
+
+  Data Path: x<1> to dp/M/mem_11_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_11_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0009'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_10_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0009 falling
+
+  Data Path: x<1> to dp/M/mem_10_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_10_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0008'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_9_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0008 falling
+
+  Data Path: x<1> to dp/M/mem_9_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_9_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0007'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_8_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0007 falling
+
+  Data Path: x<1> to dp/M/mem_8_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_8_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0006'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_7_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0006 falling
+
+  Data Path: x<1> to dp/M/mem_7_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_7_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0005'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_6_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0005 falling
+
+  Data Path: x<1> to dp/M/mem_6_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_6_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0004'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_5_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0004 falling
+
+  Data Path: x<1> to dp/M/mem_5_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_5_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0003'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_4_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0003 falling
+
+  Data Path: x<1> to dp/M/mem_4_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_4_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0002'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_3_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0002 falling
+
+  Data Path: x<1> to dp/M/mem_3_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_3_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0001'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_2_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0001 falling
+
+  Data Path: x<1> to dp/M/mem_2_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_2_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_cmp_eq0000'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_1_3 (LATCH)
+  Destination Clock: dp/M/_cmp_eq0000 falling
+
+  Data Path: x<1> to dp/M/mem_1_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE:D                     0.176          dp/M/mem_1_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dp/M/_not0001'
+  Total number of paths / destination ports: 23 / 4
+-------------------------------------------------------------------------
+Offset:              5.664ns (Levels of Logic = 5)
+  Source:            x<1> (PAD)
+  Destination:       dp/M/mem_0_3 (LATCH)
+  Destination Clock: dp/M/_not0001 rising
+
+  Data Path: x<1> to dp/M/mem_0_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  x_1_IBUF (x_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  s1<0>3 (N412)
+     MUXF5:I0->O           2   0.314   1.040  s1<1>_f5_0 (s1<1>_f51)
+     LUT4_D:I0->O          3   0.479   0.941  dp/ALU/Madd__addsub0000__or00001 (dp/ALU/Madd__addsub0000__or0000)
+     LUT4:I1->O           16   0.479   0.000  dp/ALU/z<3>1 (dp/aluWire<3>)
+     LDE_1:D                   0.176          dp/M/mem_0_3
+    ----------------------------------------
+    Total                      5.664ns (2.642ns logic, 3.022ns route)
+                                       (46.6% logic, 53.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ccc/clk1'
+  Total number of paths / destination ports: 112 / 28
+-------------------------------------------------------------------------
+Offset:              8.599ns (Levels of Logic = 2)
+  Source:            dp/AR/q_1 (FF)
+  Destination:       z4<4> (PAD)
+  Source Clock:      ccc/clk1 rising
+
+  Data Path: dp/AR/q_1 to z4<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             39   0.626   1.904  dp/AR/q_1 (dp/AR/q_1)
+     LUT4:I0->O            1   0.479   0.681  dp/b4/Mrom_j4 (z4_3_OBUF)
+     OBUF:I->O                 4.909          z4_3_OBUF (z4<3>)
+    ----------------------------------------
+    Total                      8.599ns (6.014ns logic, 2.585ns route)
+                                       (69.9% logic, 30.1% route)
+
+=========================================================================
+CPU : 10.28 / 10.63 s | Elapsed : 11.00 / 11.00 s
+ 
+--> 
+
+Total memory usage is 137184 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

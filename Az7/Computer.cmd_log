@@ -1,0 +1,52 @@
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+ngdbuild -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Computer.ucf" -p xc3s400-tq144-5 "Computer.ngc" Computer.ngd
+map -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Computer_map.ncd Computer.ngd Computer.pcf
+par -ise "E:/AzMemari/Az7/Az7.ise" -w -intstyle ise -ol std -t 1 Computer_map.ncd Computer.ncd Computer.pcf
+trce -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Computer Computer.ncd -o Computer.twr Computer.pcf -ucf Computer.ucf
+bitgen -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -f Computer.ut Computer.ncd
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+ngdbuild -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Computer.ucf" -p xc3s400-tq144-5 "Computer.ngc" Computer.ngd
+map -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Computer_map.ncd Computer.ngd Computer.pcf
+par -ise "E:/AzMemari/Az7/Az7.ise" -w -intstyle ise -ol std -t 1 Computer_map.ncd Computer.ncd Computer.pcf
+trce -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Computer Computer.ncd -o Computer.twr Computer.pcf -ucf Computer.ucf
+bitgen -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -f Computer.ut Computer.ncd
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+ngdbuild -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Computer.ucf" -p xc3s400-tq144-5 "Computer.ngc" Computer.ngd
+map -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Computer_map.ncd Computer.ngd Computer.pcf
+par -ise "E:/AzMemari/Az7/Az7.ise" -w -intstyle ise -ol std -t 1 Computer_map.ncd Computer.ncd Computer.pcf
+trce -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Computer Computer.ncd -o Computer.twr Computer.pcf -ucf Computer.ucf
+bitgen -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -f Computer.ut Computer.ncd
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+ngdbuild -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Computer.ucf" -p xc3s400-tq144-5 "Computer.ngc" Computer.ngd
+map -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Computer_map.ncd Computer.ngd Computer.pcf
+par -ise "E:/AzMemari/Az7/Az7.ise" -w -intstyle ise -ol std -t 1 Computer_map.ncd Computer.ncd Computer.pcf
+trce -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Computer Computer.ncd -o Computer.twr Computer.pcf -ucf Computer.ucf
+bitgen -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -f Computer.ut Computer.ncd
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+ngdbuild -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Computer.ucf" -p xc3s400-tq144-5 "Computer.ngc" Computer.ngd
+map -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Computer_map.ncd Computer.ngd Computer.pcf
+par -ise "E:/AzMemari/Az7/Az7.ise" -w -intstyle ise -ol std -t 1 Computer_map.ncd Computer.ncd Computer.pcf
+trce -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Computer Computer.ncd -o Computer.twr Computer.pcf -ucf Computer.ucf
+bitgen -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -f Computer.ut Computer.ncd
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+ngdbuild -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Computer.ucf" -p xc3s400-tq144-5 "Computer.ngc" Computer.ngd
+map -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Computer_map.ncd Computer.ngd Computer.pcf
+par -ise "E:/AzMemari/Az7/Az7.ise" -w -intstyle ise -ol std -t 1 Computer_map.ncd Computer.ncd Computer.pcf
+trce -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Computer Computer.ncd -o Computer.twr Computer.pcf -ucf Computer.ucf
+bitgen -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -f Computer.ut Computer.ncd
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+ngdbuild -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Computer.ucf" -p xc3s400-tq144-5 "Computer.ngc" Computer.ngd
+map -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Computer_map.ncd Computer.ngd Computer.pcf
+par -ise "E:/AzMemari/Az7/Az7.ise" -w -intstyle ise -ol std -t 1 Computer_map.ncd Computer.ncd Computer.pcf
+trce -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Computer Computer.ncd -o Computer.twr Computer.pcf -ucf Computer.ucf
+bitgen -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -f Computer.ut Computer.ncd
+xst -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -ifn Computer.xst -ofn Computer.syr
+ngdbuild -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -dd _ngo -nt timestamp -uc "Computer.ucf" -p xc3s400-tq144-5 "Computer.ngc" Computer.ngd
+map -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -p xc3s400-tq144-5 -cm area -pr b -k 4 -c 100 -o Computer_map.ncd Computer.ngd Computer.pcf
+par -ise "E:/AzMemari/Az7/Az7.ise" -w -intstyle ise -ol std -t 1 Computer_map.ncd Computer.ncd Computer.pcf
+trce -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -e 3 -l 3 -s 5 -xml Computer Computer.ncd -o Computer.twr Computer.pcf -ucf Computer.ucf
+bitgen -ise "E:/AzMemari/Az7/Az7.ise" -intstyle ise -f Computer.ut Computer.ncd
